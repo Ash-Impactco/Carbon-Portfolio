@@ -31,11 +31,13 @@
     body {
       background-color: var(--background-light);
       color: var(--text-dark);
+      font-family: "Open Sans", sans-serif;
     }
 
     .header-tops {
       background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
       padding: 2rem 0;
+      color: white;
     }
 
     .section-title h2 {
@@ -43,6 +45,18 @@
       font-size: 2.5rem;
       font-weight: 700;
       margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title h2::after {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 50px;
+      height: 3px;
+      background: var(--primary-color);
+      bottom: -10px;
+      left: calc(50% - 25px);
     }
 
     .icon-box {
@@ -57,36 +71,6 @@
     .icon-box:hover {
       transform: translateY(-5px);
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
-
-    .resume-item {
-      border-left: 2px solid var(--primary-color);
-      padding-left: 20px;
-      margin-bottom: 30px;
-    }
-
-    .portfolio-item .portfolio-wrap {
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .portfolio-info {
-      background: rgba(46, 139, 87, 0.9);
-    }
-
-    .contact .info-box {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    .nav-menu a {
-      color: #fff !important;
-    }
-
-    .nav-menu a:hover {
-      color: var(--accent-green) !important;
     }
 
     .experience-item {
@@ -115,6 +99,11 @@
     .experience-details {
       margin-top: 1rem;
       padding-left: 1rem;
+      display: none;
+    }
+
+    .experience-details.show {
+      display: block;
     }
 
     .project-card {
@@ -123,6 +112,12 @@
       padding: 1.5rem;
       margin-bottom: 1.5rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
 
     .certification-item {
@@ -131,6 +126,43 @@
       padding: 1.5rem;
       margin-bottom: 1rem;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+
+    .certification-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .social-links a {
+      color: white;
+      margin-right: 1rem;
+      font-size: 1.2rem;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--accent-green);
+    }
+
+    .nav-menu a {
+      color: white !important;
+      transition: all 0.3s ease;
+    }
+
+    .nav-menu a:hover {
+      color: var(--accent-green) !important;
+    }
+
+    .btn-primary {
+      background: var(--primary-color);
+      border-color: var(--primary-color);
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary:hover {
+      background: var(--accent-green);
+      border-color: var(--accent-green);
     }
   </style>
 
@@ -141,40 +173,28 @@
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
   <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
-
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'UA-169007209-3');
   </script>
-
-
-
-  <!-- =======================================================
-  * Template Name: Personal - v2.1.0
-  * Template URL: https://bootstrapmade.com/personal-free-resume-bootstrap-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
 </head>
 
 <body>
-  
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
+
   <!-- ======= Header ======= -->
   <header id="header" class="header-tops">
     <div class="container">
@@ -194,20 +214,20 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="#header"><span>Home</span></a></li>
-          <li><a href="#about"><span>About</span></a></li>
-          <li><a href="#experience"><span>Experience</span></a></li>
-          <li><a href="#projects"><span>Projects</span></a></li>
-          <li><a href="#ventures"><span>Other Ventures</span></a></li>
-          <li><a href="#certifications"><span>Certifications</span></a></li>
-          <li><a href="https://github.com/Ash-Impactco/Portofolio-2/raw/main/Aswin Resume .pdf" target="_blank"><span>Resume</span></a></li>
-          <li><a href="#contacts"><span>Contact</span></a></li>
+          <li class="active"><a href="#header">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#ventures">Other Ventures</a></li>
+          <li><a href="#certifications">Certifications</a></li>
+          <li><a href="https://github.com/Ash-Impactco/Portofolio-2/raw/main/Aswin Resume .pdf" target="_blank">Resume</a></li>
+          <li><a href="#contacts">Contact</a></li>
         </ul>
       </nav>
 
       <div class="social-links">
-        <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        <a href="mailto:aswinr63@gmail.com" class="google"><i class="bx bxl-google"></i></a>
+        <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank"><i class="bx bxl-linkedin"></i></a>
+        <a href="mailto:aswinr63@gmail.com"><i class="bx bxl-google"></i></a>
       </div>
     </div>
   </header>
@@ -242,8 +262,8 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="experience-item">
-            <button onclick="toggle('exp1')">Freelance Clean Tech Marketer - Cleantech GrowthLab (Jun 2024 – Present)</button>
-            <div id="exp1" class="experience-details hidden">
+            <button onclick="toggleExperience('exp1')">Freelance Clean Tech Marketer - Cleantech GrowthLab (Jun 2024 – Present)</button>
+            <div id="exp1" class="experience-details">
               <ul>
                 <li>Designed CRM workflows to nurture leads and improve SQL generation (10× increase)</li>
                 <li>Sustained 44% average open rate on nurture emails</li>
@@ -253,8 +273,8 @@
           </div>
 
           <div class="experience-item">
-            <button onclick="toggle('exp2')">Customer Success & Marketing Specialist - Scores & Levels (Jun 2024 – Present)</button>
-            <div id="exp2" class="experience-details hidden">
+            <button onclick="toggleExperience('exp2')">Customer Success & Marketing Specialist - Scores & Levels (Jun 2024 – Present)</button>
+            <div id="exp2" class="experience-details">
               <ul>
                 <li>Managed multi-channel campaigns, improving user retention by 25%</li>
                 <li>Developed onboarding flows in HubSpot, enhancing customer satisfaction by 20%</li>
@@ -263,8 +283,8 @@
           </div>
 
           <div class="experience-item">
-            <button onclick="toggle('exp3')">Business Development Manager - National Chromatography Inco (Oct 2022 – May 2024)</button>
-            <div id="exp3" class="experience-details hidden">
+            <button onclick="toggleExperience('exp3')">Business Development Manager - National Chromatography Inco (Oct 2022 – May 2024)</button>
+            <div id="exp3" class="experience-details">
               <ul>
                 <li>Led international sales of chromatography equipment worth $35k+</li>
                 <li>Onboarded 50+ clients via RFPs and cold outreach (80% quota)</li>
@@ -404,8 +424,8 @@
             <i class="bx bx-share-alt"></i>
             <h3>Social Profiles</h3>
             <div class="social-links">
-              <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-              <a href="mailto:aswinr63@gmail.com" class="google"><i class="bx bxl-google"></i></a>
+              <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank"><i class="bx bxl-linkedin"></i></a>
+              <a href="mailto:aswinr63@gmail.com"><i class="bx bxl-google"></i></a>
             </div>
           </div>
         </div>
@@ -433,22 +453,19 @@
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
   <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
   <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
-  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-  <script src="assets/vendor/venobox/venobox.min.js"></script>
   <script src="assets/vendor/typed.js/typed.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
   <script>
     // Toggle function for experience details
-    function toggle(id) {
+    function toggleExperience(id) {
       const element = document.getElementById(id);
-      element.classList.toggle("hidden");
+      element.classList.toggle('show');
     }
 
     // Typing animation
@@ -457,6 +474,14 @@
       loop: true,
       typeSpeed: 65,
       backSpeed: 65
+    });
+
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
     });
   </script>
 </body>
