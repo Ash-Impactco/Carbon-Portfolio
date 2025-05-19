@@ -1,489 +1,189 @@
 <!DOCTYPE html>
-<html lang="en">
+# Personal Portfolio Website
 
-<head>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5BB8W2X');</script>
-  <!-- End Google Tag Manager -->
-  <link rel="icon" type="image/png" href="/favicon.png"/>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+A modern, responsive personal portfolio website built with HTML, CSS, and JavaScript. This portfolio showcases your professional experience, projects, certifications, and other ventures.
 
-  <title>Aswin Raj Sivaprakash | Portfolio</title>
-  <meta content="Clean Tech Marketer and Business Developer Portfolio" name="description">
-  <meta content="cleantech, marketing, sustainability, business development" name="keywords">
+## Project Structure
 
-  <!-- Custom Theme CSS -->
-  <style>
-    :root {
-      --primary-color: #2E8B57;  /* Sea Green */
-      --secondary-color: #4682B4; /* Steel Blue */
-      --background-light: #F0F8FF; /* Alice Blue */
-      --text-dark: #2C3E50; /* Dark Blue */
-      --accent-green: #3CB371; /* Medium Sea Green */
-      --accent-blue: #5F9EA0; /* Cadet Blue */
-    }
+```
+rajaprerak.github.io/
+├── index.html
+├── assets/
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── main.js
+│   ├── vendor/
+│   │   ├── bootstrap/
+│   │   ├── jquery/
+│   │   ├── aos/
+│   │   └── boxicons/
+│   └── img/
+│       ├── projects/
+│       └── ventures/
+└── README.md
+```
 
-    body {
-      background-color: var(--background-light);
-      color: var(--text-dark);
-      font-family: "Open Sans", sans-serif;
-    }
+## Required Images
 
-    .header-tops {
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      padding: 2rem 0;
-      color: white;
-    }
+### Projects
+Place the following images in `assets/img/projects/`:
+- `geothermal.jpg` (800x600px)
+- `coral.jpg` (800x600px)
+- `waste.jpg` (800x600px)
 
-    .section-title h2 {
-      color: var(--primary-color);
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 2rem;
-      position: relative;
-    }
+### Ventures
+Place the following images in `assets/img/ventures/`:
+- `intrusivethoughts.jpg` (800x600px)
+- `cloudkitchen.jpg` (800x600px)
 
-    .section-title h2::after {
-      content: '';
-      position: absolute;
-      display: block;
-      width: 50px;
-      height: 3px;
-      background: var(--primary-color);
-      bottom: -10px;
-      left: calc(50% - 25px);
-    }
+## Dependencies
 
-    .icon-box {
-      background: white;
-      transition: all 0.3s ease;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-    }
+The project uses the following third-party libraries:
+- Bootstrap CSS (v5.1.3)
+- jQuery (v3.6.0)
+- AOS (Animate On Scroll)
+- Boxicons
+- Google Fonts (Open Sans, Raleway, Poppins)
 
-    .icon-box:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+## Setup Instructions
 
-    .experience-item {
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
+1. Clone the repository:
+```bash
+git clone https://github.com/yourusername/yourusername.github.io.git
+```
 
-    .experience-item button {
-      width: 100%;
-      text-align: left;
-      padding: 1rem;
-      border: none;
-      border-radius: 5px;
-      background: var(--primary-color);
-      color: white;
-      transition: all 0.3s ease;
-    }
+2. Add your images to the respective directories:
+   - Project images in `assets/img/projects/`
+   - Venture images in `assets/img/ventures/`
 
-    .experience-item button:hover {
-      background: var(--accent-green);
-    }
+3. Update the content in `index.html`:
+   - Personal information
+   - Experience details
+   - Project descriptions
+   - Certification information
+   - Contact details
 
-    .experience-details {
-      margin-top: 1rem;
-      padding-left: 1rem;
-      display: none;
-    }
+4. Customize the styling:
+   - Edit `assets/css/style.css` to modify colors, fonts, and layout
+   - Update CSS variables in the `:root` selector for theme colors
 
-    .experience-details.show {
-      display: block;
-    }
+5. Deploy to GitHub Pages:
+   - Push your changes to the main branch
+   - Your site will be available at `https://yourusername.github.io`
 
-    .project-card {
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
+## Customization
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+### Colors
+The website uses CSS variables for easy color customization. Edit these variables in `style.css`:
+```css
+:root {
+  --primary-color: #2E8B57;
+  --secondary-color: #1E4D2B;
+  --accent-green: #3CB371;
+  --background-light: #f8f9fa;
+  --text-dark: #444444;
+  --text-light: #ffffff;
+}
+```
 
-    .certification-item {
-      background: white;
-      border-radius: 10px;
-      padding: 1.5rem;
-      margin-bottom: 1rem;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
-    }
+### Fonts
+The website uses Google Fonts. To change fonts, update the font-family properties in `style.css` and add the corresponding Google Fonts link in `index.html`.
 
-    .certification-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    }
+## Browser Support
 
-    .social-links a {
-      color: white;
-      margin-right: 1rem;
-      font-size: 1.2rem;
-      transition: all 0.3s ease;
-    }
+The website is compatible with:
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-    .social-links a:hover {
-      color: var(--accent-green);
-    }
+## License
 
-    .nav-menu a {
-      color: white !important;
-      transition: all 0.3s ease;
-    }
+This project is open source and available under the [MIT License](LICENSE).
 
-    .nav-menu a:hover {
-      color: var(--accent-green) !important;
-    }
+## Contributing
 
-    .btn-primary {
-      background: var(--primary-color);
-      border-color: var(--primary-color);
-      transition: all 0.3s ease;
-    }
+Feel free to submit issues and enhancement requests!
 
-    .btn-primary:hover {
-      background: var(--accent-green);
-      border-color: var(--accent-green);
-    }
-  </style>
+## Support
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+If you find this project helpful, please give it a ⭐️ on GitHub!
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+:star: Star me on GitHub — it helps!
+[![Maintenance](https://img.shields.io/badge/maintained-yes-green.svg)](https://github.com/rajaprerak/rajaprerak.github.io/commits/master)
+[![Website shields.io](https://img.shields.io/badge/website-up-yellow)](http://rajaprerak.github.io/)
+[![Ask Me Anything !](https://img.shields.io/badge/ask%20me-linkedin-1abc9c.svg)](https://www.linkedin.com/in/rajaprerak/)
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
-  <!-- Template Main CSS File -->
-  <link href="assets/css/style.css" rel="stylesheet">
+### Website Preview
+#### Home Page
+<img src="website_images/HomePage.gif" width="900">
 
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-169007209-3"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'UA-169007209-3');
-  </script>
-</head>
 
-<body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5BB8W2X"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
+#### About Page
+<img src="website_images/AboutPage.png" width="900">
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="header-tops">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-8">
-          <h1><a href="index.html">Aswin Raj Sivaprakash</a></h1>
-          <h2>I'm a <span class="typing">Clean Tech Marketer</span></h2>
-          <p class="text-white">Environmental Strategist | CRM Specialist</p>
-        </div>
-        <div class="col-lg-4 text-right">
-          <p>📍 Porto, Portugal</p>
-          <p>📞 +351 938816822</p>
-          <p>✉️ <a href="mailto:aswinr63@gmail.com" class="text-white">aswinr63@gmail.com</a></p>
-          <p>🔗 <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank" class="text-white">linkedin.com/in/aswin-sivaprakash</a></p>
-        </div>
-      </div>
 
-      <nav class="nav-menu d-none d-lg-block">
-        <ul>
-          <li class="active"><a href="#header">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#ventures">Other Ventures</a></li>
-          <li><a href="#certifications">Certifications</a></li>
-          <li><a href="https://github.com/Ash-Impactco/Portofolio-2/raw/main/Aswin Resume .pdf" target="_blank">Resume</a></li>
-          <li><a href="#contacts">Contact</a></li>
-        </ul>
-      </nav>
+#### Projects Page
+<img src="website_images/ProjectPage.png" width="900">
+  
 
-      <div class="social-links">
-        <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank"><i class="bx bxl-linkedin"></i></a>
-        <a href="mailto:aswinr63@gmail.com"><i class="bx bxl-google"></i></a>
-      </div>
-    </div>
-  </header>
 
-  <!-- ======= About Section ======= -->
-  <section id="about" class="about">
-    <div class="container">
-      <div class="section-title">
-        <h2>About Me</h2>
-      </div>
+:star: Star me on GitHub — it helps!
 
-      <div class="row">
-        <div class="col-lg-4" data-aos="fade-right">
-          <img src="https://raw.githubusercontent.com/Ash-Impactco/Portofolio-2/main/1746453347734.jpg" class="img-fluid rounded-circle" alt="Aswin Raj Sivaprakash">
-        </div>
-        <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <p>
-            A passionate clean tech marketer and sustainability specialist with 5+ years driving CRM, digital strategy, and ESG communications across global markets. I blend market expertise and sustainability passion to craft high-impact marketing strategies for clean technology and environmental initiatives.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
+## Features 📋
+⚡️ Fully Responsive\
+⚡️ Valid HTML5 & CSS3\
+⚡️ Typing animation using `Typed.js`\
+⚡️ Easy to modify
 
-  <!-- ======= Experience Section ======= -->
-  <section id="experience" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Experience</h2>
-      </div>
+## Installation & Deployment 📦
+- Clone the repository and modify the content of <b>index.html</b> 
+- Add or remove images from `assets/img/` directory as per your requirement.
+- Update the info of `projects` folder according to your need
+- Use [Github Pages](https://create-react-app.dev/docs/deployment/#github-pages) to create your own website.
+- To deploy your website, first you need to create github repository with name `<your-github-username>.github.io` and push the generated code to the `master` branch.
 
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="experience-item">
-            <button onclick="toggleExperience('exp1')">Freelance Clean Tech Marketer - Cleantech GrowthLab (Jun 2024 – Present)</button>
-            <div id="exp1" class="experience-details">
-              <ul>
-                <li>Designed CRM workflows to nurture leads and improve SQL generation (10× increase)</li>
-                <li>Sustained 44% average open rate on nurture emails</li>
-                <li>Developed digital strategy and content for social campaigns, boosting engagement by 30%</li>
-              </ul>
-            </div>
-          </div>
+## Sections 📚
+✔️ About\
+✔️ Interests\
+✔️ Education\
+✔️ Online Certification\
+✔️ Experience\
+✔️ Projects \
+✔️ Skills \
+✔️ Resume\
+✔️ Contact Info
 
-          <div class="experience-item">
-            <button onclick="toggleExperience('exp2')">Customer Success & Marketing Specialist - Scores & Levels (Jun 2024 – Present)</button>
-            <div id="exp2" class="experience-details">
-              <ul>
-                <li>Managed multi-channel campaigns, improving user retention by 25%</li>
-                <li>Developed onboarding flows in HubSpot, enhancing customer satisfaction by 20%</li>
-              </ul>
-            </div>
-          </div>
 
-          <div class="experience-item">
-            <button onclick="toggleExperience('exp3')">Business Development Manager - National Chromatography Inco (Oct 2022 – May 2024)</button>
-            <div id="exp3" class="experience-details">
-              <ul>
-                <li>Led international sales of chromatography equipment worth $35k+</li>
-                <li>Onboarded 50+ clients via RFPs and cold outreach (80% quota)</li>
-                <li>Boosted lead conversion by 13% with Salesforce CRM</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ======= Projects Section ======= -->
-  <section id="projects" class="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Projects</h2>
-      </div>
+## Tools Used 🛠️
+* <b>GitHub Pages</b> - To host my static website (HTML, CSS, JS).
 
-      <div class="row">
-        <div class="col-lg-4 col-md-6">
-          <div class="project-card">
-            <h3>Geothermal Heat Grid Case Study</h3>
-            <p>Leeuwarden, NL (Feb 2022 – Apr 2022)</p>
-            <p>Collected qualitative data from 100 respondents on geothermal integration using DESSIN-ESS. Findings published by <a href="https://www.omropfryslan.nl/nl/nieuws/1144457/internationale-studenten-duurzame-aanpak-in-fryslan-is-mogelijk" target="_blank">Omrop</a>.</p>
-          </div>
-        </div>
+## Contributing 💡
+#### Step 1
 
-        <div class="col-lg-4 col-md-6">
-          <div class="project-card">
-            <h3>Coral Bleaching Status Study</h3>
-            <p>Andaman Islands, India (Dec 2017 – Feb 2018)</p>
-            <p>Identified 1°C SST increase causing symbiosis degradation. Assessed thermal stress via CBAS. Presented findings to ANET, Indian Wildlife Dept. & Coast Guard.</p>
-          </div>
-        </div>
+- **Option 1**
+    - 🍴 Fork this repo!
 
-        <div class="col-lg-4 col-md-6">
-          <div class="project-card">
-            <h3>Municipal Solid Waste Management</h3>
-            <p>Erode, India (Sep 2016 – Nov 2016)</p>
-            <p>Monitored 10k kWh/day electricity from 135 tonnes waste gasification. Segregated waste into 6 categories including hazardous and E-waste.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+- **Option 2**
+    - 👯 Clone this repo to your local machine.
 
-  <!-- ======= Other Ventures Section ======= -->
-  <section id="ventures" class="portfolio">
-    <div class="container">
-      <div class="section-title">
-        <h2>Other Ventures</h2>
-      </div>
 
-      <div class="row">
-        <div class="col-lg-6 col-md-6">
-          <div class="project-card">
-            <h3>Intrusive Thoughts FTW</h3>
-            <p>Social Media Content Creator</p>
-            <p>A creative outlet where I share relatable content about mental health and daily life experiences, building a community of over 10K followers who connect through shared experiences and humor.</p>
-            <a href="https://www.instagram.com/intrusivethoughtsftw" target="_blank" class="btn btn-primary">View Instagram</a>
-          </div>
-        </div>
+#### Step 2
 
-        <div class="col-lg-6 col-md-6">
-          <div class="project-card">
-            <h3>Cloud Kitchen Venture</h3>
-            <p>Netherlands, 2023</p>
-            <p>Successfully launched and operated a cloud kitchen in the Netherlands, specializing in authentic cuisine. Managed operations, marketing, and customer service, serving 500+ customers and maintaining a 4.5+ rating on delivery platforms.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+- **Build your code** 🔨🔨🔨
 
-  <!-- ======= Certifications Section ======= -->
-  <section id="certifications" class="services">
-    <div class="container">
-      <div class="section-title">
-        <h2>Certifications</h2>
-      </div>
+#### Step 3
 
-      <div class="row">
-        <div class="col-lg-3 col-md-6">
-          <div class="certification-item">
-            <i class="ri-cloud-line" style="color: #00a4e3;"></i>
-            <h3>Salesforce Marketing Cloud Certification</h3>
-            <p>Feb 2023</p>
-          </div>
-        </div>
+- 🔃 Create a new pull request.
 
-        <div class="col-lg-3 col-md-6">
-          <div class="certification-item">
-            <i class="ri-bar-chart-box-line" style="color: #e74c3c;"></i>
-            <h3>Google Analytics Certification</h3>
-            <p>Nov 2021</p>
-          </div>
-        </div>
+## License
+[![License](http://img.shields.io/:license-mit-blue.svg?style=flat-square)](http://badges.mit-license.org)
 
-        <div class="col-lg-3 col-md-6">
-          <div class="certification-item">
-            <i class="ri-database-2-line" style="color: #ff7f00;"></i>
-            <h3>HubSpot CRM Certified</h3>
-            <p>Oct 2021</p>
-          </div>
-        </div>
+- **[MIT license](http://opensource.org/licenses/mit-license.php)**
 
-        <div class="col-lg-3 col-md-6">
-          <div class="certification-item">
-            <i class="ri-linkedin-box-line" style="color: #0077b5;"></i>
-            <h3>Digital Marketing Strategy</h3>
-            <p>Jul 2020</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ======= Contact Section ======= -->
-  <section id="contacts" class="contact">
-    <div class="container">
-      <div class="section-title">
-        <h2>Contact</h2>
-      </div>
-
-      <div class="row mt-2">
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-map"></i>
-            <h3>Location</h3>
-            <p>Porto, Portugal</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 mt-md-0 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-share-alt"></i>
-            <h3>Social Profiles</h3>
-            <div class="social-links">
-              <a href="https://linkedin.com/in/aswin-sivaprakash" target="_blank"><i class="bx bxl-linkedin"></i></a>
-              <a href="mailto:aswinr63@gmail.com"><i class="bx bxl-google"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-envelope"></i>
-            <h3>Email</h3>
-            <p>aswinr63@gmail.com</p>
-          </div>
-        </div>
-
-        <div class="col-md-6 mt-4 d-flex align-items-stretch">
-          <div class="info-box">
-            <i class="bx bx-phone-call"></i>
-            <h3>Phone</h3>
-            <p>+351 938816822</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/jquery/jquery.min.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
-  <script src="assets/vendor/counterup/counterup.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script src="assets/vendor/aos/aos.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-  <script>
-    // Toggle function for experience details
-    function toggleExperience(id) {
-      const element = document.getElementById(id);
-      element.classList.toggle('show');
-    }
-
-    // Typing animation
-    var typed = new Typed('.typing', {
-      strings: ["Clean Tech Marketer", "Sustainability Specialist", "Digital Strategist"],
-      loop: true,
-      typeSpeed: 65,
-      backSpeed: 65
-    });
-
-    // Initialize AOS
-    AOS.init({
-      duration: 1000,
-      easing: "ease-in-out",
-      once: true,
-      mirror: false
-    });
-  </script>
-</body>
 
 </html>
